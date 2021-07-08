@@ -48,6 +48,13 @@ const AddUser = (props) => {
 
   return (
     <Fragment>
+      {error && (
+        <ErrorModal
+          onConfirm={errorHandler}
+          title={error.title}
+          message={error.message}
+        />
+      )}
       <Card>
         <form className="mt-8 space-y-6" onSubmit={addUserHandler}>
           <div className="rounded-md shadow-sm ">
@@ -82,13 +89,6 @@ const AddUser = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-      {error && (
-        <ErrorModal
-          onConfirm={errorHandler}
-          title={error.title}
-          message={error.message}
-        />
-      )}
     </Fragment>
   );
 };
