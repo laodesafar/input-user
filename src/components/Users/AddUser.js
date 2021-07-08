@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import Button from "../UI/Button";
 import Card from "../UI/Card";
 import ErrorModal from "../UI/ErrorModal";
@@ -47,7 +47,7 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <Fragment>
       <Card>
         <form className="mt-8 space-y-6" onSubmit={addUserHandler}>
           <div className="rounded-md shadow-sm ">
@@ -89,7 +89,7 @@ const AddUser = (props) => {
           message={error.message}
         />
       )}
-    </div>
+    </Fragment>
   );
 };
 
